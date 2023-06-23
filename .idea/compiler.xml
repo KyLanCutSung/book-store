@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="discovery-server" />
         <module name="book-service" />
         <module name="borrowing-service" />
+        <module name="api-gateway" />
         <module name="notification-service" />
+        <module name="notificationservice" />
         <module name="employee-service" />
       </profile>
     </annotationProcessing>
@@ -19,9 +20,10 @@
       <module name="api-gateway" target="11" />
       <module name="book-service" target="11" />
       <module name="borrowing-service" target="11" />
-      <module name="discovery-server" target="17" />
+      <module name="discovery-server" target="11" />
       <module name="employee-service" target="11" />
       <module name="notification-service" target="11" />
+      <module name="notificationservice" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,6 +34,7 @@
       <module name="discovery-server" options="-parameters" />
       <module name="employee-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
+      <module name="notificationservice" options="-parameters" />
     </option>
   </component>
 </project>

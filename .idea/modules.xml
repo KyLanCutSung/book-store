@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/employee-service/employee-service.iml" filepath="$PROJECT_DIR$/employee-service/employee-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservices-project.iml" filepath="$PROJECT_DIR$/.idea/microservices-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/notification-service/notification-service.iml" filepath="$PROJECT_DIR$/notification-service/notification-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification-service/notificationservice.iml" filepath="$PROJECT_DIR$/notification-service/notificationservice.iml" />
     </modules>
   </component>
 </project>
