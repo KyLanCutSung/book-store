@@ -5,6 +5,8 @@ import com.mingming.bookservice.command.data.BookRepository;
 import com.mingming.bookservice.query.model.BookResponseModel;
 import com.mingming.bookservice.query.queries.GetAllBooksQuery;
 import com.mingming.bookservice.query.queries.GetBooksQuery;
+import com.mingming.commonservice.model.BookResponseCommonModel;
+import com.mingming.commonservice.query.GetDetailBookQuery;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +38,12 @@ public class BookProjection {
             list.add(model);
         });
         return list;
+    }
+    @QueryHandler
+    public BookResponseCommonModel handle(GetDetailBookQuery getDetailBookQuery){
+        BookResponseCommonModel model = new BookResponseCommonModel();
+        Book book = bookRepository.getById(getDetailBookQuery.getBookId());
+        BeanUtils.copyProperties(book, model);
+        return model;
     }
 }

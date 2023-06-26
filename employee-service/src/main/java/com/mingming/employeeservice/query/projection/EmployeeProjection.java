@@ -1,5 +1,7 @@
 package com.mingming.employeeservice.query.projection;
 
+import com.mingming.commonservice.model.EmployeeResponseCommonModel;
+import com.mingming.commonservice.query.GetDetailsEmployeeQuery;
 import com.mingming.employeeservice.command.data.Employee;
 import com.mingming.employeeservice.command.data.EmployeeRepository;
 import com.mingming.employeeservice.query.model.EmployeeResponseModel;
@@ -37,5 +39,13 @@ public class EmployeeProjection {
             listModel.add(model);
         });
         return listModel;
+    }
+
+    @QueryHandler
+    public EmployeeResponseCommonModel handle(GetDetailsEmployeeQuery query){
+        EmployeeResponseCommonModel model = new EmployeeResponseCommonModel();
+        Employee employee = employeeRepository.getById(query.getEmployeeId());
+        BeanUtils.copyProperties(employee, model);
+        return model;
     }
 }
