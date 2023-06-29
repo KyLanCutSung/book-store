@@ -3,7 +3,7 @@ package com.mingming.borrowingservice.command.controller;
 import com.mingming.borrowingservice.command.command.CreateBorrowCommand;
 import com.mingming.borrowingservice.command.command.UpdateBookReturnCommand;
 import com.mingming.borrowingservice.command.model.BorrowRequestModel;
-import com.mingming.borrowingservice.command.service.BorrowServiceImpl;
+import com.mingming.borrowingservice.command.service.BorrowService;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -21,7 +21,7 @@ public class BorrowCommandController {
     private CommandGateway commandGateway;
 
     @Autowired
-    private BorrowServiceImpl borrowService;
+    private BorrowService borrowService;
     @PostMapping
     public String addBookBorrowing(@RequestBody BorrowRequestModel model){
         try{

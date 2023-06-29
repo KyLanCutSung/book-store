@@ -3,7 +3,7 @@ package com.mingming.borrowingservice.command.events;
 import com.mingming.borrowingservice.command.data.Borrowing;
 import com.mingming.borrowingservice.command.data.BorrowingRepository;
 import com.mingming.borrowingservice.command.model.Message;
-import com.mingming.borrowingservice.command.service.BorrowServiceImpl;
+import com.mingming.borrowingservice.command.service.BorrowService;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class BorrowingEventsHandler {
     private BorrowingRepository borrowingRepository;
 
     @Autowired
-    private BorrowServiceImpl borrowService;
+    private BorrowService borrowService;
 
     @EventHandler
     public void on(BorrowCreatedEvent event){

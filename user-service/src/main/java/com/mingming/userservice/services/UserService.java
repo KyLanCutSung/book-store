@@ -7,7 +7,7 @@ import com.mingming.userservice.model.UserDto;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUser();
+    List<UserDto> getAllUser();
     void saveUser(User user);
     UserDto login(SignInForm signInForm);
 }

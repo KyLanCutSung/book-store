@@ -86,7 +86,7 @@ public class BorrowingSaga {
         } catch (Exception e) {
 
             System.out.println(e.getMessage());
-            rollBackBookStatus(event.getBookId(),event.getEmployeeId(),event.getBorrowId());
+            rollBackBookStatus(event.getBookId(), event.getEmployeeId(), event.getBorrowId());
         }
     }
     @SagaEventHandler(associationProperty = "bookId")
