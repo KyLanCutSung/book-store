@@ -11,24 +11,24 @@ spring:
           uri: http://localhost:9001
           predicates:
             - Path=/api/v1/books/**
-#          filters:
-#            - AuthFilter
+          filters:
+            - AuthFilter
         - id: employee-service
           uri: http://localhost:9002
           predicates:
             - Path=/api/v1/employees/**
-#          filters:
-#            - AuthFilter
+          filters:
+            - AuthFilter
         - id: borrow-service
           uri: http://localhost:9003
           predicates:
             - Path=/api/v1/borrowing/**
-#          filters:
-#            - AuthFilter
-        - id: userservice
+          filters:
+            - AuthFilter
+        - id: user-service
           uri: http://localhost:9004
           predicates:
-            - Path=/api/v1/users/**
+            - Path=/api/v1/user/**
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:

@@ -20,8 +20,8 @@ public class BookCommandController {
     public String addBook(@RequestBody BookRequestModel model){
         CreateBookCommand command =
                 new CreateBookCommand(UUID.randomUUID().toString(), model.getName(), model.getAuthor(), true);
-        commandGateway.sendAndWait(command);
-        return "added book";
+        String result = commandGateway.sendAndWait(command);
+        return result;
     }
     @PutMapping
     public String updateBook(@RequestBody BookRequestModel model){
